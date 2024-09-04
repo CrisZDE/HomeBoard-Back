@@ -1,13 +1,14 @@
 package com.homeboard.homeboard.model;
 
-// import org.hibernate.mapping.List;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-// import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,8 +28,8 @@ public class User {
     @Column(name = "password", length = 10, nullable = false)
     private String password;
 
-    // @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    // private List<Idea> ideas;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Idea> idea;
 
     
     public User (){}
@@ -65,11 +66,13 @@ public class User {
         this.password = password;
     }
 
-    // public List<Idea> getIdeas() {
-    //     return ideas;
-    // }
+    public List<Idea> getIdea() {
+        return idea;
+    }
 
-    // public void setIdeas(List<Idea> ideas) {
-    //     this.ideas = ideas;
-    //}
+    public void setIdea(List<Idea> idea) {
+        this.idea = idea;
+    }
+
+
 }
