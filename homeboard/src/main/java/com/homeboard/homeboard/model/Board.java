@@ -2,7 +2,7 @@ package com.homeboard.homeboard.model;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
+//import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,7 +22,7 @@ public class Board {
     @Column(name = "category")
     private String category;
     
-    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany
     private List<Idea> idea;
 
     public Board(){}

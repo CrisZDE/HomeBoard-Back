@@ -23,6 +23,9 @@ public class Idea {
     @Column(name = "notes", length = 500, nullable= false)
     private String notes;
 
+    @Column(name= "img", nullable = true)
+    private String img;
+
     @Column(name = "url1", length = 500, nullable = true)
     private String url1;
 
@@ -127,6 +130,10 @@ public class Idea {
     public void setBoard(Board board) {
         this.board = board;
     }
+
+
+
+
 
     
 }
