@@ -1,7 +1,9 @@
 package com.homeboard.homeboard.service;
 
-import org.apache.el.stream.Optional;
+
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 import com.homeboard.homeboard.Repository.UserRepository;
 import com.homeboard.homeboard.model.User;
@@ -24,7 +26,7 @@ public class UserService {
         return user;
     }
 
-    // public Optional<User> getUserByEmail(String email) {
-    //     return userRepository.findByEmail(email);
-    // }
+    public Optional<User> getUserByEmail(String email) {
+        return userRepository.findByEmail(email);
+    }
 }
