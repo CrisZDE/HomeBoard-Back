@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.homeboard.homeboard.exception.HomeBoardException;
 import com.homeboard.homeboard.model.Board;
 import com.homeboard.homeboard.service.BoardService;
 
@@ -18,12 +19,12 @@ public class BoardController {
     }
 
     @GetMapping("board")
-    public List<Board> getAllCategories(){
+    public List<Board> getAllCategories() throws HomeBoardException{
         return boardService.getAllCategories();
     }
     
     @GetMapping("board/{id}")
-    public Board getCategoryById(@PathVariable Integer id){
+    public Board getCategoryById(@PathVariable Integer id) throws HomeBoardException{
         return boardService.getCategoryById(id);
     }
 }
