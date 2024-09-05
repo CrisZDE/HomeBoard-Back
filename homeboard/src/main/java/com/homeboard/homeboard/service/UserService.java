@@ -4,8 +4,6 @@ package com.homeboard.homeboard.service;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 import com.homeboard.homeboard.Repository.UserRepository;
 import com.homeboard.homeboard.exception.HomeBoardException;
 import com.homeboard.homeboard.model.User;
