@@ -23,7 +23,7 @@ public class Idea {
     @Column(name = "notes", length = 500, nullable= false)
     private String notes;
 
-    @Column(name= "img", nullable = true)
+    @Column(name= "img", nullable = false)
     private String img;
 
     @Column(name = "url1", length = 500, nullable = true)
@@ -42,7 +42,7 @@ public class Idea {
     private Double longitude;
 
     @ManyToOne
-    @JoinColumn(name = "user_Id", nullable = false)
+    @JoinColumn(name = "userId", nullable = false)
     private User user;
 
     @ManyToOne
@@ -129,6 +129,14 @@ public class Idea {
 
     public void setBoard(Board board) {
         this.board = board;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
 

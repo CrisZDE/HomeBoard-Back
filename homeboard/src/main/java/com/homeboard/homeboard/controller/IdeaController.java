@@ -27,9 +27,9 @@ public class IdeaController {
         return ideaService.getPublicIdeas();
     }
 
-    @GetMapping("/user/{user_Id}/category/{categoryId}")
-    public List<Idea> getIdeasByUserIdAndCategoryId(@PathVariable Integer userId, @PathVariable Integer chategoryId){
-        return ideaService.getIdeasByUserIdAndCategoryId(userId, chategoryId);
+    @GetMapping("/user/{userId}/category/{categoryId}")
+    public List<Idea> getIdeasByUserIdAndCategoryId(@PathVariable Integer userId, @PathVariable Integer categoryId){
+        return ideaService.getIdeasByUserIdAndCategoryId(userId, categoryId);
     }
 
     @PostMapping("/idea")
