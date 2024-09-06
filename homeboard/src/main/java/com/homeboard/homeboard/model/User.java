@@ -30,6 +30,7 @@ public class User {
 
     @OneToMany
     private List<Idea> idea;
+    private String token;
 
     
     public User (){}
@@ -72,6 +73,13 @@ public class User {
 
     public void setIdea(List<Idea> idea) {
         this.idea = idea;
+    }
+
+    public String getToken() {
+        return token;
+    }
+    public void setToken(String token) {
+        this.token = token;
     }
 
 
