@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+src/main/resources/database.properties
+src/main/java/com/homeboard/homeboard/config/ConstansSecurity.java
