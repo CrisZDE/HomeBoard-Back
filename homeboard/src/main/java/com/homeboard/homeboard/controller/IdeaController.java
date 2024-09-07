@@ -1,7 +1,7 @@
 package com.homeboard.homeboard.controller;
 
 import java.util.List;
-
+import static com.homeboard.homeboard.config.ConstansSecurity.*;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,28 +23,28 @@ public class IdeaController {
         this.ideaService = ideaService;
     }
 
-    @GetMapping("/public")
+    @GetMapping(PUBLIC_IDEAS_URL)
     public List<Idea> getAllPublicIdeas() throws HomeBoardException{
         return ideaService.getPublicIdeas();
     }
 
-    @GetMapping("/user/{userId}/category/{categoryId}")
+    @GetMapping(USER_IDEAS_URL)
     public List<Idea> getIdeasByUserIdAndCategoryId(@PathVariable Integer userId, @PathVariable Integer categoryId) throws HomeBoardException{
         return ideaService.getIdeasByUserIdAndCategoryId(userId, categoryId);
     }
 
-    @PostMapping("/idea")
+    @PostMapping(NEW_IDEA_URL)
     public Idea addNewIdea(@RequestBody Idea idea) throws HomeBoardException{
         return ideaService.addNewIdea(idea);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping(UPDATE_IDEA_URL)
     public Idea updateIdea(@PathVariable Integer id, @RequestBody Idea idea) throws HomeBoardException{
         idea.setId(id);
         return ideaService.updateIdea(idea);
     }
 
-        @DeleteMapping("/{id}")
+        @DeleteMapping(DELETE_IDEA_URL)
     public void deleteIdea(@PathVariable Integer id) throws HomeBoardException{
         ideaService.deleteIdea(id);
     }

@@ -26,7 +26,7 @@ public class JWTAuthtenticationConfig {
     }
 
     public String getJWTToken(String email){
-        List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList("USER");
+        List<GrantedAuthority> grantedAuthorities = AuthorityUtils.commaSeparatedStringToAuthorityList("ROLE_USER");
 
 
         String token = Jwts
@@ -41,6 +41,6 @@ public class JWTAuthtenticationConfig {
                 .setExpiration(new Date(System.currentTimeMillis() + TOKEN_EXPIRATION_TIME))
                 .signWith(getSigningKey(SECRET_KEY), SignatureAlgorithm.HS256)
                 .compact();
-                return "Bearer " + token;
+                return TOKEN_BEARER_PREFIX + token;
     }
 }

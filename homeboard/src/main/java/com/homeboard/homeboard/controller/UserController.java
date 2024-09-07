@@ -1,7 +1,7 @@
 package com.homeboard.homeboard.controller;
 
 import java.util.Optional;
-
+import static com.homeboard.homeboard.config.ConstansSecurity.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,7 +24,7 @@ public class UserController {
         this.userService = userService;
 
     }
-    @PostMapping("/login")
+    @PostMapping(LOGIN_URL)
     public User login(
         @RequestBody LoginRequest loginRequest) throws HomeBoardException {
             User user = userService.getUserByEmail(loginRequest.getEmail());
@@ -36,7 +36,7 @@ public class UserController {
 
     
 
-    @PostMapping("/signIn")
+    @PostMapping(SIGNIN_URL)
     public User signIn(@RequestBody User user) throws HomeBoardException{
         return userService.addNewUser(user);
     }

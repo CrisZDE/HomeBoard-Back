@@ -30,6 +30,7 @@ public class User {
 
     @OneToMany
     private List<Idea> idea;
+    
     private String token;
 
     

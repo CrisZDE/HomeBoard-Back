@@ -28,7 +28,7 @@ public class UserService {
     
     public User addNewUser(User user) throws HomeBoardException{
 
-            if (user == null) {
+    if (user == null) {
         throw new HomeBoardException("El usuario no puede ser nulo.", HttpStatus.BAD_REQUEST);
     }
     if (userRepository.existsByEmail(user.getEmail())) {
